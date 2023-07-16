@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    showSql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mybatisdb
+    username: postgres
+    password: Eziomanish@1
+mybatis:
+  mapper-locations: classpath*:**/sql/*.xml

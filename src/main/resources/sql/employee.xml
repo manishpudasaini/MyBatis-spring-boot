@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+        'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace="com.example.mybatis.mapper.EmployeeMapper">
+
+    <resultMap id="fetch_employee"
+               type="com.example.mybatis.dto.EmployeeDto">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="address" column="address"/>
+        <result property="phone" column="phone"/>
+    </resultMap>
+
+    <select id="getEmployeeById" parameterType="Integer" resultMap="fetch_employee" >
+        SELECT * FROM employee WHERE id = #{id}
+    </select>
+
+    <insert id="insertEmployee" parameterType="com.example.mybatis.dto.EmployeeDto">
+        INSERT INTO employee(name, address,phone) VALUES (#{name}, #{address},#{phone})
+    </insert>
+
+</mapper>
