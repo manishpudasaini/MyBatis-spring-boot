@@ -16,8 +16,11 @@
         SELECT * FROM employee WHERE id = #{id}
     </select>
 
+    <select id="findAllEmployee" resultMap="fetch_employee" >
+        SELECT * FROM employee
+    </select>
+
     <insert id="insertEmployee" parameterType="com.example.mybatis.dto.EmployeeDto">
         INSERT INTO employee(name, address,phone) VALUES (#{name}, #{address},#{phone})
     </insert>
-
 </mapper>
